@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: executing remote ssh commands using ssh key
-       uses: appleboy/ssh-action@master
+    - uses: appleboy/ssh-action@master
       with:
       host: ${{ secrets.139.162.50.109 }}
       username: ${{ secrets.root }}
@@ -24,7 +24,7 @@ jobs:
 
     - uses: actions/checkout@v2
     - name: Set up JDK 1.8
-    -  uses: actions/setup-java@v1
+    - uses: actions/setup-java@v1
       with:
         java-version: 1.8
     - name: Build with Maven
