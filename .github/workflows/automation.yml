@@ -13,6 +13,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: executing remote ssh commands using ssh key
+       uses: appleboy/ssh-action@master
+      with:
+      host: ${{ secrets.139.162.50.109 }}
+      username: ${{ secrets.root }}
+      key: ${{ secrets.thingsboard }}
+      port: ${{ secrets.22 }}
+      script: whoami
+      
     - uses: actions/checkout@v2
     - name: Set up JDK 1.8
       uses: actions/setup-java@v1
@@ -21,11 +30,4 @@ jobs:
     - name: Build with Maven
       run: mvn clean install
 
-      - name: executing remote ssh commands using ssh key
-       uses: appleboy/ssh-action@master
-      with:
-      host: ${{ secrets.139.162.50.109 }}
-      username: ${{ secrets.root }}
-      key: ${{ secrets.thingsboard }}
-      port: ${{ secrets.22 }}
-      script: whoami
+      
