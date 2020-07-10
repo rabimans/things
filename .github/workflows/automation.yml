@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: executing remote ssh commands using ssh key
-      uses: appleboy/ssh-action@master
+    - uses: appleboy/ssh-action@master
       with:
       host: ${{ secrets.139.162.50.109 }}
       username: ${{ secrets.root }}
