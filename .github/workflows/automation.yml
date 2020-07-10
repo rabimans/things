@@ -17,12 +17,12 @@ jobs:
     steps:
     - name: executing remote ssh commands using ssh key
       uses: appleboy/ssh-action@master
-        with:
-        host: ${{ secrets.139.162.50.109 }}
-        username: ${{ secrets.root }}
-        key: ${{ secrets.thingsboard }}
-        port: ${{ secrets.22 }}
-        script: whoami
+      with:
+      host: ${{ secrets.139.162.50.109 }}
+      username: ${{ secrets.root }}
+      key: ${{ secrets.thingsboard }}
+      port: ${{ secrets.22 }}
+      script: whoami
 
       runs-on: ubuntu-latest
     - uses: actions/checkout@v2
