@@ -11,5 +11,5 @@ jobs:
       with:
         host: ${{ secrets.REMOTE_HOST}}
         username: ${{ secrets.root }}
-        key: ${{ secrets.~/.ssh/id_rsa}}
+        key: ${{ secrets.KEY}}
         script: whoami
