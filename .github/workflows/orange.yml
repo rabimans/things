@@ -1,4 +1,4 @@
-- name: multiple command
+  name: multiple command
   uses: appleboy/ssh-action@master
   with:
     host: ${{ secrets.HOST }}
